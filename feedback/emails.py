@@ -5,12 +5,13 @@ from django.template.loader import render_to_string
 
 
 def send_feedback_email(email, message):
-    c = Context({'email': email, 'message': message})
+    #c = Context[{'email': email, 'message': message}]
 
-    email_subject = render_to_string(
-        'feedback/email/feedback_email_subject.txt', c).replace('\n', '')
-    email_body = render_to_string('feedback/email/feedback_email_body.txt', c)
-
+    # email_subject = render_to_string(
+    #     'feedback/email/feedback_email_subject.txt', [mail['email'] for mail in c]).replace('\n', '')
+    # email_body = render_to_string('feedback/email/feedback_email_body.txt', [mess['message'] for mess in c])
+    email_subject = "Feedback email"
+    email_body = "Sent via feedback form"
     email = EmailMessage(
         email_subject, email_body, email,
         [settings.DEFAULT_FROM_EMAIL], [],
