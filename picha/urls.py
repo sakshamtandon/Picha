@@ -7,5 +7,5 @@ from feedback.views import FeedbackView
 urlpatterns = [
     url(r'^$', PhotoView.as_view(), name="home"),
     url(r'^feedback/$', FeedbackView.as_view(), name="feedback"),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
 ]
